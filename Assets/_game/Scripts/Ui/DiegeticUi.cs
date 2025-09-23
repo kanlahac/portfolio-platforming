@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace Ui
 {
-    sealed class InteractButton : MonoBehaviour
+    sealed class DiegeticUi : MonoBehaviour
     {
+        [HideInInspector] public bool IsActive;
+
+
         private void Awake()
         {
             transform.localScale = Vector3.zero;
@@ -17,17 +20,32 @@ namespace Ui
         }
 
 
-        public void ShowButton()
+        public void ShowUi()
         {
             transform.DOScale(Vector3.one, .25f)
                 .SetEase(Ease.OutBounce);
+
+            IsActive = true;
         }
 
 
-        public void HideButton()
+        public void ShowUi(float timer)
+        {
+            transform.DOScale(Vector3.one, .25f)
+                .SetEase(Ease.OutBounce);
+
+            DOVirtual.DelayedCall(timer, HideUi);
+             
+            IsActive = true;
+        }
+
+
+        public void HideUi()
         {
             transform.DOScale(Vector3.zero, .25f)
                 .SetEase(Ease.InBounce);
+            
+            IsActive = false;
         }
     }
 }

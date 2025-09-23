@@ -5,6 +5,7 @@ namespace Characters.Player
     sealed class ResetPosition : MonoBehaviour
     {
         [SerializeField] CharacterData _characterData;
+        [SerializeField] float _deathHeight;
         private Vector3 _resetPosition;
 
 
@@ -25,7 +26,7 @@ namespace Characters.Player
 
         private void Update()
         {
-            if (transform.position.y < _characterData.Info.DeathHeight)
+            if (transform.position.y < _deathHeight)
             {
                 transform.position = _resetPosition;
             }

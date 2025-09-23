@@ -3,18 +3,34 @@ using UnityEngine.InputSystem;
 
 namespace Characters.Player 
 {
+    [RequireComponent(typeof(Rigidbody))]
     sealed class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private CharacterData _characterData;
-        [SerializeField] private Transform _modelTransform;
-        [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _model;
         [SerializeField] private InputActionReference _moveAction;
         [SerializeField] private ConstraintsProfile _movingConstraints;
+        private Rigidbody _rigidbody;
+        private Animator _animator;
 
 
-        private void OnEnable() { _moveAction.action.Enable(); }
-        private void OnDisable() { _moveAction.action.Disable(); }
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+            _animator = _model.GetComponent<Animator>();
+        }
+
+
+        private void OnEnable()
+        {
+            _moveAction.action.Enable();
+        }
+
+
+        private void OnDisable()
+        {
+            _moveAction.action.Disable();
+        }
 
 
         private void FixedUpdate()
@@ -36,8 +52,8 @@ namespace Characters.Player
 
                 Quaternion targetRotation = Quaternion.LookRotation(horizontalMove);
 
-                _modelTransform.rotation = Quaternion.Slerp(
-                    _modelTransform.rotation,
+                _model.rotation = Quaternion.Slerp(
+                    _model.rotation,
                     targetRotation,
                     15f * Time.deltaTime
                 );
@@ -46,7 +62,7 @@ namespace Characters.Player
             _rigidbody.linearVelocity = move;
 
             _animator.SetFloat("Move", horizontalMove.magnitude);
-            _characterData.Info.IsMoving = horizontalMove.magnitude > 0f;
+            _characterData.IsMoving = horizontalMove.magnitude > 0f;
         }
     }
 }

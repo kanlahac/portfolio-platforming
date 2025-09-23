@@ -6,7 +6,7 @@ namespace Characters.Player
 {
     sealed class InteractCollider : MonoBehaviour
     {
-        [SerializeField] private InteractButton _interactButton;
+        [SerializeField] private DiegeticUi _interactButton;
         [SerializeField] private InputActionReference _interactAction;
         private IInteractable _interactable;
 
@@ -30,7 +30,7 @@ namespace Characters.Player
             if (other.TryGetComponent(out IInteractable interactable))
             {
                 _interactable = interactable;
-                _interactButton.ShowButton();
+                _interactButton.ShowUi();
             }
         }
 
@@ -42,7 +42,7 @@ namespace Characters.Player
                 if (interactable == _interactable)
                 {
                     _interactable = null;
-                    _interactButton.HideButton();
+                    _interactButton.HideUi();
                 }
             }
         }

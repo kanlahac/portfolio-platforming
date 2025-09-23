@@ -1,7 +1,7 @@
 using UnityEditor;
 
-[CustomEditor(typeof(DialogData))]
-public class DialogDataEditor : Editor
+[CustomEditor(typeof(GameEventListener))]
+public class GameEventListenerEditor : Editor
 {
     public override void OnInspectorGUI()
     {

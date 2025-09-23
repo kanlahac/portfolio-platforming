@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Big_guy
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   DialogList:
-  - CharacterData: {fileID: 11400000, guid: e698abbf2f2944a4aaae69e593d69489, type: 2}
-    Text: Calmn down budy, i am not you enemy.
+  - Yo, what's up?
