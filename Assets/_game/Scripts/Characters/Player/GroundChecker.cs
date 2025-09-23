@@ -1,16 +1,19 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Characters.Player
 {
-    public class GroundChecker : MonoBehaviour
+    sealed class GroundChecker : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _model;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private CharacterData _charracterData;
         [SerializeField] private Vector3 _groundCheckOffset;
         [SerializeField] private float _groundCheckerRadius;
 
         private bool _isGrounded;
+        private bool _lastState;
 
 
         private void Update()
@@ -23,8 +26,17 @@ namespace Characters.Player
                 _groundLayer
             );
 
+            if (_lastState == false && _isGrounded == true)
+            {
+                _model.DOScaleY(0.9f, 0.25f)
+                    .SetEase(Ease.InBounce)
+                    .SetLoops(2, LoopType.Yoyo);
+            }
+
             _charracterData.Info.IsGrounded = _isGrounded;
             _animator.SetBool("Grounded", _isGrounded);
+
+            _lastState = _isGrounded;
         }
 
 

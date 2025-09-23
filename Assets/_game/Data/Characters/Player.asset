@@ -19,7 +19,7 @@ MonoBehaviour:
     IsMoving: 0
   InitialStats:
     MovementSpeed: 7
-    JumpForce: 5
+    JumpForce: 8
   RuntimeStats:
     MovementSpeed: 7
-    JumpForce: 5
+    JumpForce: 8

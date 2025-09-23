@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Characters.Player 
 {
-    public class PlayerMovement : MonoBehaviour
+    sealed class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private CharacterData _characterData;
         [SerializeField] private Transform _modelTransform;

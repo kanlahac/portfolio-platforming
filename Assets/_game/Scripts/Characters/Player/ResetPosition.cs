@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Characters.Player
 {
-    public class ResetPosition : MonoBehaviour
+    sealed class ResetPosition : MonoBehaviour
     {
         [SerializeField] CharacterData _characterData;
         private Vector3 _resetPosition;
@@ -16,7 +16,7 @@ namespace Characters.Player
             {
                 _resetPosition = new Vector3(
                     platform.position.x,
-                    platform.position.y + 1,
+                    platform.position.y + (platform.localScale.y / 2f) + 1,
                     platform.position.z
                 );
             }

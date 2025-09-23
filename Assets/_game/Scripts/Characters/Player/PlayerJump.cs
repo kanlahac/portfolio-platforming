@@ -1,13 +1,14 @@
-using Characters;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Character.Player
+namespace Characters.Player
 {
-    public class PlayerJump : MonoBehaviour
+    sealed class PlayerJump : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _model;
         [SerializeField] private CharacterData _characterData;
         [SerializeField] private InputActionReference _jumpAction;
         [SerializeField] private ConstraintsProfile _jumpingConstraints;
@@ -18,6 +19,8 @@ namespace Character.Player
             _jumpAction.action.Enable();
             _jumpAction.action.performed += OnJump;
         }
+
+        
         private void OnDisable()
         {
             _jumpAction.action.Disable();
@@ -30,6 +33,8 @@ namespace Character.Player
             if (_characterData.Info.IsGrounded)
             {
                 _rigidbody.constraints = _jumpingConstraints.profile;
+
+                _model.DOShakeScale(0.2f, 0.25f, 5);
 
                 _rigidbody.AddForce(Vector3.up * _characterData.RuntimeStats.JumpForce, ForceMode.VelocityChange);
             }
