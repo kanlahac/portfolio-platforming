@@ -10,7 +10,10 @@ namespace World.Decorations
         {
             transform.DOShakeScale(0.25f, 40);
 
-            GamepadTools.Vibrate(0.2f, 0.2f, 0.1f);
+            float randomLow = Random.Range(0.05f, 0.25f);
+            float randomHigh = Random.Range(0.05f, 0.25f);
+
+            GamepadTools.Vibrate(randomLow, randomHigh, 0.1f);
         }
     }
 }

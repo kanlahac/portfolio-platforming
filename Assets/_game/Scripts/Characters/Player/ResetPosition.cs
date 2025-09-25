@@ -2,25 +2,17 @@ using UnityEngine;
 
 namespace Characters.Player
 {
+    [RequireComponent(typeof (CharacterController))]
     sealed class ResetPosition : MonoBehaviour
     {
         [SerializeField] CharacterData _characterData;
         [SerializeField] float _deathHeight;
-        private Vector3 _resetPosition;
+        private CharacterController _characterController;
 
 
-        private void OnCollisionEnter(Collision collision)
+        private void Awake()
         {
-            Transform platform = collision.transform;
-
-            if (platform.CompareTag("Platform"))
-            {
-                _resetPosition = new Vector3(
-                    platform.position.x,
-                    platform.position.y + (platform.localScale.y / 2f) + 1,
-                    platform.position.z
-                );
-            }
+            _characterController = GetComponent<CharacterController>();
         }
 
 
@@ -28,7 +20,11 @@ namespace Characters.Player
         {
             if (transform.position.y < _deathHeight)
             {
-                transform.position = _resetPosition;
+                _characterController.enabled = false;
+
+                transform.position = _characterData.ResetPosition;
+
+                _characterController.enabled = true;
             }
         }
     }

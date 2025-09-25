@@ -13,6 +13,7 @@ namespace World.Collectables.SpellBook
         [SerializeField] private CinemachineCamera _bookCamera;
         [SerializeField] private InputActionReference _exitAction;
         [SerializeField] private LevelData _levelData;
+        [SerializeField] private InternalEvent _switchInputMap;
         private SphereCollider _collider;
         private bool IsActive;
 
@@ -65,6 +66,8 @@ namespace World.Collectables.SpellBook
         public void StartCollect()
         {
             _collider.enabled = false;
+
+            _switchInputMap.Event.Invoke();
 
             transform.DOKill();
 
@@ -121,6 +124,9 @@ namespace World.Collectables.SpellBook
             sequence.AppendCallback(() =>
             {
                 // BOOOM
+
+                 _switchInputMap.Event.Invoke();
+                 
                 IsActive = false;
                 gameObject.SetActive(false);
             });

@@ -543,8 +543,9 @@ MonoBehaviour:
   _closeBook: {fileID: 1918930677161312652}
   _openBook: {fileID: 2205904679405759543}
   _bookCamera: {fileID: 6927616704676831489}
-  _exitAction: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _exitAction: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _levelData: {fileID: 11400000, guid: f18b32dc59af78847b8ce841500309ff, type: 2}
+  _switchInputMap: {fileID: 11400000, guid: f6e53a8353946e04f950dbd8be64250c, type: 2}
 --- !u!114 &6184343311023639804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1114,7 @@ MonoBehaviour:
   _xboxButtonName: xb
   _playStationButtonName: pc
   _nintendoButtonName: na
-  _pcButtonName: e
+  _pcButtonName: esc
   _touchButtonName: Tap
   _sufix: 
 --- !u!1 &6657488675005915587

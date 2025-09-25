@@ -37,6 +37,11 @@ namespace Characters.Player
         {
             if (_characterController.isGrounded == false) return;
 
+            GamepadTools.Vibrate(0.3f, 0.4f, 0.1f);
+
+            transform.DOScale(Vector3.one * 0.9f, 0.1f)
+                .SetLoops(2, LoopType.Yoyo);
+
             _playerController.AddForce(Vector3.up, _characterData.RuntimeStats.JumpForce);
         }
     }
