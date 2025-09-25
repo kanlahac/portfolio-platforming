@@ -17,5 +17,30 @@ namespace Tools
                 });
             }
         }
+
+
+        public static void IncrementalVibrate(float maxLowFreq, float maxHighFreq, float duration, Ease ease)
+        {
+            if (Gamepad.current != null)
+            {
+                DOTween.To(
+                    () => 0f,
+                    (value) =>
+                    {
+                        float currentLowFreq = value * maxLowFreq;
+                        float currentHighFreq = value * maxHighFreq;
+
+                        Gamepad.current.SetMotorSpeeds(currentLowFreq, currentHighFreq);
+                    },
+                    1f,
+                    duration
+                )
+                .SetEase(ease)
+                .OnComplete(() =>
+                {
+                    Gamepad.current.ResetHaptics();
+                });
+            }
+        }
     }
 }

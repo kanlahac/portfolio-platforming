@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351004db6363cdf4aa6f1d92fc61b803, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: Assembly-CSharp::Characters.CharacterData
-  Info:
-    Name: Player
-    DeathHeight: -15
-    IsGrounded: 1
-    IsMoving: 0
   InitialStats:
     MovementSpeed: 7
-    JumpForce: 8
+    JumpForce: 24
+    GravityForce: -15
   RuntimeStats:
     MovementSpeed: 7
-    JumpForce: 8
+    JumpForce: 24
+    GravityForce: -15

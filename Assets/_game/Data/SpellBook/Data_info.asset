@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d153311b1f2ac4fae19a06dd06f5b0, type: 3}
+  m_Name: Data_info
+  m_EditorClassIdentifier: 
+  Left:
+    Title: Scriptable objects
+    Text: I use ScriptableObjects for data management, event systems, and more. I
+      can create connections between scripts without direct dependencies.
+  Right:
+    Title: Structs
+    Text: I like to use structs to create data structures. This way, I keep data
+      grouped regardless of its type, which is excellent for use with lists.

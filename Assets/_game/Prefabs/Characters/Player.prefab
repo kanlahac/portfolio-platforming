@@ -172,6 +172,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &86289847759280234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3388515088750899914}
+  - component: {fileID: 1001792000649135725}
+  - component: {fileID: 5595155601477793074}
+  m_Layer: 6
+  m_Name: Get_collectables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3388515088750899914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86289847759280234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9018039195697511007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1001792000649135725
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86289847759280234}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5595155601477793074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86289847759280234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c7cc51ced7cf74784b793e75b7f9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &254346026512453026
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,11 +5736,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9018039195697511007}
-  - component: {fileID: 4504634588559259215}
-  - component: {fileID: 7456378937125647377}
+  - component: {fileID: 6035146446647765731}
   - component: {fileID: 7052119029830966238}
-  - component: {fileID: 7106622345926205345}
-  - component: {fileID: 1279390031451484601}
   - component: {fileID: 2093777933192422968}
   m_Layer: 6
   m_Name: Player
@@ -5699,37 +5762,11 @@ Transform:
   - {fileID: 1327888583806771826}
   - {fileID: 1751774722633625109}
   - {fileID: 5506440491541659805}
+  - {fileID: 3388515088750899914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4504634588559259215
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588279037919904857}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!136 &7456378937125647377
-CapsuleCollider:
+--- !u!143 &6035146446647765731
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5743,14 +5780,16 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 2.2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &7052119029830966238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5765,43 +5804,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _characterData: {fileID: 11400000, guid: 834dfc3dd27e2674e987ae196815a340, type: 2}
   _model: {fileID: 1327888583806771826}
+  _animator: {fileID: 4876101752629100021}
   _moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _movingConstraints: {fileID: 11400000, guid: 13aa2410098c7374488f6b28008d09f7, type: 2}
---- !u!114 &7106622345926205345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588279037919904857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d6ae053240c4f44b1eeb6ba78f3516, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Character.Player.PlayerJump
-  _model: {fileID: 1327888583806771826}
-  _characterData: {fileID: 11400000, guid: 834dfc3dd27e2674e987ae196815a340, type: 2}
   _jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _jumpingConstraints: {fileID: 11400000, guid: c58b438dbc136174a8eee577800fe498, type: 2}
---- !u!114 &1279390031451484601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588279037919904857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5877e1e04f6124ca22fc80c1bd4482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GroundChecker
-  _model: {fileID: 1327888583806771826}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _charracterData: {fileID: 11400000, guid: 834dfc3dd27e2674e987ae196815a340, type: 2}
-  _groundCheckOffset: {x: 0, y: 0.3, z: 0}
-  _groundCheckerRadius: 0.5
 --- !u!114 &2093777933192422968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7355,7 +7360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5506440491541659805}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d153311b1f2ac4fae19a06dd06f5b0, type: 3}
+  m_Name: Clean_code_info
+  m_EditorClassIdentifier: 
+  Left:
+    Title: Interface
+    Text: One of the best tools for scalable code, I can connect one class with many
+      others without needing to modify the first one.
+  Right:
+    Title: Enums
+    Text: Great for creating selectors in the editor and performing comparisons.
+      They're optimal because they aren't based on strings.
