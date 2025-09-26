@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351004db6363cdf4aa6f1d92fc61b803, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: Assembly-CSharp::Characters.CharacterData
-  ResetPosition: {x: -6.02, y: 1, z: 0}
+  ResetPosition: {x: 30.95, y: 1, z: 0}
   InitialStats:
     MovementSpeed: 7
     JumpForce: 24
     GravityForce: -15
   RuntimeStats:
     MovementSpeed: 7
-    JumpForce: 24
+    JumpForce: 35
     GravityForce: -15

@@ -9,6 +9,7 @@ TagManager:
   - Npc
   - Collectable
   - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Npc
   - Collectables
   - Checkpoint
-  - 
+  - Enemy
   - 
   - 
   - 

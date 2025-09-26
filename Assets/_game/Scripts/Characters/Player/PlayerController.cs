@@ -55,7 +55,7 @@ namespace Characters.Player
 
             _gravitySpeed += _characterData.RuntimeStats.GravityForce * Time.deltaTime;
 
-            if (_characterController.isGrounded && _gravitySpeed < 0) _gravitySpeed = -2.0f;
+            if (_characterController.isGrounded && _gravitySpeed < 0) _gravitySpeed = -7.0f;
 
             Vector3 gravityMove = new Vector3(0f, _gravitySpeed, 0f);
             Vector3 finalMove = (move * _characterData.RuntimeStats.MovementSpeed) + _externalForces + gravityMove;
@@ -76,7 +76,7 @@ namespace Characters.Player
 
         public void AddForce(Vector3 direction, float force)
         {
-            _externalForces = direction.normalized * force;
+            _externalForces += direction.normalized * force;
         }
     }
 }

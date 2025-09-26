@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Tools;
 using UnityEngine;
 
 namespace Characters.Npc
@@ -23,7 +24,7 @@ namespace Characters.Npc
         {
             if (transform.localScale == Vector3.zero) return;
 
-            transform.Rotate(Vector3.one * 50f * Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.one * 100f * Time.deltaTime, Space.Self);
         }
 
 
@@ -53,7 +54,9 @@ namespace Characters.Npc
         {
             if (collision.transform.TryGetComponent(out IPlayerController playerController))
             {
-                playerController.AddForce(_direction, 30f);
+                playerController.AddForce(_direction, 40f);
+
+                GamepadTools.Vibrate(0.75f, 0.75f, 0.2f);
             }
         }
     }

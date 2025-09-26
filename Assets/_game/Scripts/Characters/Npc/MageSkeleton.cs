@@ -40,7 +40,7 @@ namespace Characters.Npc
 
             _isActive = true;
 
-            DOVirtual.DelayedCall(Random.Range(0f, 0.75f), () =>
+            DOVirtual.DelayedCall(Random.Range(0f, 1f), () =>
             {
                 _animator.SetTrigger("Spawn");
 
